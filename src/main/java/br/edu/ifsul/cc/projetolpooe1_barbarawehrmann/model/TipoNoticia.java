@@ -9,14 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tipo_noticia")
+@Table(name = "tb_tipoNoticia")
 public class TipoNoticia implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(name = "descricao")
+    @Column(nullable = false, length = 155, name = "descricao")
     private String descricao;
 
     public TipoNoticia() {}

@@ -11,17 +11,17 @@ import javax.persistence.ManyToMany;
 import java.util.List;
 
 @Entity
-@Table(name = "midias")
+@Table(name = "tb_midias")
 public class Midias implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(name = "descricao")
+    @Column(nullable = false, length = 155, name = "descrição")
     private String descricao;
-
-    @Column(name = "url")
+    
+    @Column(nullable = false, name = "url") // sem limite de caracteres, pois a url pode ser longa
     private String url;
 
     @ManyToMany(mappedBy = "midias")

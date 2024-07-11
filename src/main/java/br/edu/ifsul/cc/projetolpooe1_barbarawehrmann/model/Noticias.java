@@ -15,17 +15,17 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
-@Table(name = "noticias")
+@Table(name = "tb_noticias")
 public class Noticias implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(name = "titulo")
+    @Column(nullable = false, length = 155, name = "titulo")
     private String titulo;
 
-    @Column(name = "conteudo")
+    @Column(nullable = false, length = 255, name = "conteudo") // sem limite de caracteres, pois o conteúdo da notícia pode ser longo
     private String conteudo;
 
     @ManyToOne
@@ -33,7 +33,7 @@ public class Noticias implements Serializable {
     private TipoNoticia tipo_noticia;
 
     @ManyToMany
-    @JoinTable(name = "noticia_midia",
+    @JoinTable(name = "tb_noticiaMidia",
             joinColumns = @JoinColumn(name = "noticia_id"),
             inverseJoinColumns = @JoinColumn(name = "midia_id"))
     private List<Midias> midias = new ArrayList<>();
