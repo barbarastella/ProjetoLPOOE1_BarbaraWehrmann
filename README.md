@@ -8,5 +8,5 @@ O presente projeto avaliativo refere-se ao desenvolvimento de um sistema Java ut
 ## Modelagem Realizada
 A modelagem do sistema incluiu as seguintes entidades e seus relacionamentos:
 
-![Modelagem](img/diagrama.jpg)
+![Diagrama](img/diagrama.png)
 
